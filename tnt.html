@@ -4,6 +4,8 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@clappr/player@latest/dist/clappr.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swarmcloud-hls@latest/dist/p2p-engine.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swarmcloud-hls@latest/dist/clappr-p2p-plugin.min.js"></script>
+    <!-- Samsung Smart TV -->
+    <script type="text/javascript" src="$WEBAPIS/webapis/webapis.js"></script>
     <style>
         body, html {margin: 0;padding: 0;width: 100%;height: 100%;overflow: hidden;}
         #player {position: absolute;top: 0;left: 0;width: 100%;height: 100%;}
@@ -54,11 +56,47 @@
         });
     })
 
-   document.addEventListener('keydown', function(event) {
-       if (event.key === 'PageDown') {
-           window.location.href = 'index.html';
-       }
-   });
+    function handleKeyDown(event) {
+        console.log('Key pressed: ', event.keyCode);
+        if (event.keyCode === 428) { // Channel Down
+            window.location.href = 'index.html';
+        }
+    }
+
+    document.addEventListener('keydown', handleKeyDown);
+
+    function goFullScreen() {
+        var elem = document.documentElement;
+        if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+        } else if (elem.mozRequestFullScreen) { // Firefox
+            elem.mozRequestFullScreen();
+        } else if (elem.webkitRequestFullscreen) { // Chrome, Safari and Opera
+            elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) { // IE/Edge
+            elem.msRequestFullscreen();
+        }
+    }
+
+    window.onload = function() {
+        goFullScreen();
+    };
+
+    if (typeof tizen !== 'undefined') {
+        document.addEventListener('keydown', function(e) {
+            switch(e.keyCode) {
+                case 10009: // Return key
+                    tizen.application.getCurrentApplication().exit();
+                    break;
+                case 427: // Channel Up
+                    window.location.href = 'tnt.html';
+                    break;
+                case 428: // Channel Down
+                    window.location.href = 'index.html';
+                    break;
+            }
+        });
+    }
 </script>
 </body>
 </html>
