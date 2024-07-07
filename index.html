@@ -27,7 +27,7 @@
 <div id="player"></div>
 <script>
    var p2pConfig = {
-       trackerZone: 'us',        
+       trackerZone: 'us',
    };
    var player = new Clappr.Player({
        source: "https://7.tiofutbol.com:443/lb/dsports/mono.m3u8?token=dd1aed43e8b11f4b0cafe810c82dcedbe3688c8a-ebb73fb66df72be3e47d7c0261a5e777-1720343228-1720310828&remote=181.72.27.235",
@@ -36,6 +36,7 @@
        width: '100%',
        height: '100%',
        autoPlay: true,
+       mute: true,
        plugins: [SwarmCloudClapprPlugin],
        playback: {
            hlsjsConfig: {
