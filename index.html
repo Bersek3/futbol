@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-
+    <title>DIRECTV EN VIVO</title>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@clappr/player@latest/dist/clappr.min.js"></script>
     <!-- P2PEngine -->
     <script src="https://cdn.jsdelivr.net/npm/swarmcloud-hls@latest/dist/p2p-engine.min.js"></script>
     <!-- P2P Clappr Plugin -->
     <script src="https://cdn.jsdelivr.net/npm/swarmcloud-hls@latest/dist/clappr-p2p-plugin.min.js"></script>
     
-
-
     <style>
         body, html {
             margin: 0;
@@ -28,22 +25,53 @@
             height: 100%;
         }
 
+        .arrow {
+            position: absolute;
+            top: 50%;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            text-align: center;
+            line-height: 50px;
+            font-size: 30px;
+            cursor: pointer;
+            z-index: 1000;
+            user-select: none;
+        }
+
+        .arrow.left {
+            left: 10px;
+        }
+
+        .arrow.right {
+            right: 10px;
+        }
+
     </style>
 </head>
 <body>
 <div id="player"></div>
+<div class="arrow left" onclick="goToPage('espn.html')">&#9664;</div>
+<div class="arrow right" onclick="goToPage('tnt.html')">&#9654;</div>
+
 <script>
+    function goToPage(page) {
+        window.location.href = page;
+    }
+
     var p2pConfig = {
         // logLevel: 'debug',
         trackerZone: 'us',        
-//        token: "Qi7zWMfSg",
-//         waitForPeer: true,
-//        waitForPeerTimeout: 2.0,
-//        sourceUrl: " ",
+        // token: "Qi7zWMfSg",
+        // waitForPeer: true,
+        // waitForPeerTimeout: 2.0,
+        // sourceUrl: " ",
         // Other p2pConfig options provided
     }
-        var player = new Clappr.Player({
-        source: "https://3.tiofutbol.com:443/lb/dsports/index.m3u8?token=fcc2f460c75f1aceae896ec30b3984a9b3800633-c3e69ddac880f61ffe291fcba0e77af5-1720523356-1720512556&remote=190.217.196.59",
+
+    var player = new Clappr.Player({
+        source: "https://18.tiofutbol.com:443/lb/dsports/index.m3u8?token=b67b870d4ea702c512f2fc85c7184926da9a86ba-3488c6aaa102c23a38e7a489158b82b5-1720525166-1720514366&remote=190.217.196.59",
         parentId: "#player",
         poster: '',
         width: '100%',
@@ -52,62 +80,15 @@
         plugins: [SwarmCloudClapprPlugin],
         playback: {
             hlsjsConfig: {
-                maxBufferSize: 0,       
-                maxBufferLength: 12,    
+                maxBufferSize: 0,
+                maxBufferLength: 12,
                 liveSyncDurationCount: 8,
                 enableDvr: false,
                 p2pConfig
             }
         }
     });
-    function handleKeyDown(event) {
-       console.log('Key pressed: ', event.keyCode);
-       if (event.keyCode === 427) { // Channel Up
-           window.location.href = 'tnt.html';
-       }
-   }
 
-   document.addEventListener('keydown', handleKeyDown);
-
-   function goFullScreen() {
-       var elem = document.documentElement;
-       if (elem.requestFullscreen) {
-           elem.requestFullscreen();
-       } else if (elem.mozRequestFullScreen) { // Firefox
-           elem.mozRequestFullScreen();
-       } else if (elem.webkitRequestFullscreen) { // Chrome, Safari and Opera
-           elem.webkitRequestFullscreen();
-       } else if (elem.msRequestFullscreen) { // IE/Edge
-           elem.msRequestFullscreen();
-       }
-   }
-
-   window.onload = function() {
-       goFullScreen();
-   };
-
-   if (typeof tizen !== 'undefined') {
-       document.addEventListener('keydown', function(e) {
-           switch(e.keyCode) {
-               case 10009: // Return key
-                   tizen.application.getCurrentApplication().exit();
-                   break;
-               case 427: // Channel Up
-                   window.location.href = 'tnt.html';
-                   break;
-               case 428: // Channel Down
-                   window.location.href = 'index.html';
-                   break;
-           }
-       });
-   }
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
