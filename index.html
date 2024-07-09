@@ -1,28 +1,28 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="es">
 <head>
-    <title>DIRECTV EN VIVO</title>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@clappr/player@latest/dist/clappr.min.js"></script>
-    <!-- P2PEngine -->
-    <script src="https://cdn.jsdelivr.net/npm/swarmcloud-hls@latest/dist/p2p-engine.min.js"></script>
-    <!-- P2P Clappr Plugin -->
-    <script src="https://cdn.jsdelivr.net/npm/swarmcloud-hls@latest/dist/clappr-p2p-plugin.min.js"></script>
-    
-    <style>
-        body, html {
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TNT SPORTS CHILE</title>
+    <style type="text/css">
+        html, body {
+            height: 100%;
             margin: 0;
             padding: 0;
-            width: 100%;
+            overflow: hidden; /* Para evitar el desplazamiento vertical en dispositivos móviles */
+        }
+        .embed-responsive {
             height: 100%;
+            position: relative;
             overflow: hidden;
         }
-
-        #player {
+        .embed-responsive iframe {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            border: none;
         }
 
         .arrow {
@@ -47,48 +47,19 @@
         .arrow.right {
             right: 10px;
         }
-
     </style>
 </head>
 <body>
-<div id="player"></div>
-<div class="arrow left" onclick="goToPage('espn.html')">&#9664;</div>
-<div class="arrow right" onclick="goToPage('tnt.html')">&#9654;</div>
+    <div class="embed-responsive">
+        <iframe id="videoFrame" sandbox="allow-scripts allow-same-origin" allowfullscreen="true" scrolling="no" src="https://tucanaldeportivo.com/directvsports.php" allow="encrypted-media" width="100%" height="100%" frameborder="0"></iframe>
+    </div>
+    <div class="arrow left" onclick="goToPage('espn.html')">&#9664;</div>
+    <div class="arrow right" onclick="goToPage('tnt.html')">&#9654;</div>
 
-<script>
-    function goToPage(page) {
-        window.location.href = page;
-    }
-
-    var p2pConfig = {
-        // logLevel: 'debug',
-        trackerZone: 'us',        
-        // token: "Qi7zWMfSg",
-        // waitForPeer: true,
-        // waitForPeerTimeout: 2.0,
-        // sourceUrl: " ",
-        // Other p2pConfig options provided
-    }
-
-    var player = new Clappr.Player({
-        source: "https://18.tiofutbol.com:443/lb/dsports/index.m3u8?token=b67b870d4ea702c512f2fc85c7184926da9a86ba-3488c6aaa102c23a38e7a489158b82b5-1720525166-1720514366&remote=190.217.196.59",
-        parentId: "#player",
-        poster: '',
-        width: '100%',
-        height: '100%',
-        autoPlay: false,
-        plugins: [SwarmCloudClapprPlugin],
-        playback: {
-            hlsjsConfig: {
-                maxBufferSize: 0,
-                maxBufferLength: 12,
-                liveSyncDurationCount: 8,
-                enableDvr: false,
-                p2pConfig
-            }
+    <script>
+        function goToPage(page) {
+            document.getElementById('videoFrame').src = page;
         }
-    });
-
-</script>
+    </script>
 </body>
 </html>
