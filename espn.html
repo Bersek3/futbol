@@ -3,12 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ESPN EN VIVO</title>
+    <title>Tu Transmisión en Vivo</title>
     <style type="text/css">
         html, body {
             height: 100%;
             margin: 0;
             padding: 0;
+            overflow: hidden; /* Para evitar el desplazamiento vertical en dispositivos móviles */
         }
         .embed-responsive {
             height: 100%;
@@ -50,14 +51,38 @@
 </head>
 <body>
     <div class="embed-responsive">
-        <iframe sandbox="allow-scripts allow-same-origin" id="videoFrame" allowfullscreen="true" scrolling="no" src="https://golazohd.com/tv/espnco.php" allow="encrypted-media" width="100%" height="100%" frameborder="0"></iframe>
+        <iframe id="videoFrame" sandbox="allow-scripts allow-same-origin" allowfullscreen="true" scrolling="no" src="https://golazohd.com/tv/espnco.php" allow="encrypted-media" width="100%" height="100%" frameborder="0"></iframe>
     </div>
-    <div class="arrow left" onclick="goToPage('index.html')">&#9664;</div>
+    <div class="arrow left" onclick="goToPage('espn.html')">&#9664;</div>
     <div class="arrow right" onclick="goToPage('tnt.html')">&#9654;</div>
 
     <script>
+        var touchstartX = 0;
+        var touchendX = 0;
+
+        document.addEventListener('touchstart', function(event) {
+            touchstartX = event.changedTouches[0].screenX;
+        }, false);
+
+        document.addEventListener('touchend', function(event) {
+            touchendX = event.changedTouches[0].screenX;
+            handleGesture();
+        }, false);
+
+        function handleGesture() {
+            if (touchendX < touchstartX) {
+                // Deslizar hacia la izquierda
+                goToPage('tnt.html');
+            }
+
+            if (touchendX > touchstartX) {
+                // Deslizar hacia la derecha
+                goToPage('espn.html');
+            }
+        }
+
         function goToPage(page) {
-            window.location.href = page;
+            document.getElementById('videoFrame').src = page;
         }
     </script>
 </body>
