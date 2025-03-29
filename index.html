@@ -68,28 +68,37 @@
         'https://ringeling.zappingtv.com/v1/mega_hevc/live1/playlist_c.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjk4OTEwMjMxMSwidXVpZCI6IndMc1ZKdkZvbzNqVUx6VHdIa2RuUSJ9.01aoDkU_93u1a69lSZISBoxJOyI_7kg06e_zDMcHJLk',
         "https://ringeling.zappingtv.com/v1/tvno_hevc/live1/playlist_c.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjk4OTEwMjMxMSwidXVpZCI6IndMc1ZKdkZvbzNqVUx6VHdIa2RuUSJ9.01aoDkU_93u1a69lSZISBoxJOyI_7kg06e_zDMcHJLk",
         "https://ringeling.zappingtv.com/v1/13_hevc_ll/live1/playlist_c.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjk4OTEwMjMxMSwidXVpZCI6IndMc1ZKdkZvbzNqVUx6VHdIa2RuUSJ9.01aoDkU_93u1a69lSZISBoxJOyI_7kg06e_zDMcHJLk",
- 
-
     ];
 
     let currentStreamIndex = 0;
 
     // Función para cargar el stream
     function loadStream(url) {
-        if (Hls.isSupported()) {
-            const hls = new Hls();
-            hls.loadSource(url);
-            hls.attachMedia(video);
-            hls.on(Hls.Events.MANIFEST_PARSED, function () {
-                video.play();
-            });
-        } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-            video.src = url;
+        const hls = new Hls();
+        
+        // Evento de error
+        hls.on(Hls.Events.ERROR, function(event, data) {
+            console.error('Error en el stream: ', data);
+        });
+
+        // Cargar el stream
+        hls.loadSource(url);
+        hls.attachMedia(video);
+
+        // Solo reproducir cuando el manifiesto está cargado
+        hls.on(Hls.Events.MANIFEST_PARSED, function () {
             video.play();
-        }
+        });
+
+        // Reiniciar el video en cada cambio de stream
+        hls.on(Hls.Events.ERROR, function (event, data) {
+            if (data.fatal) {
+                console.error('Error fatal en el HLS:', data);
+            }
+        });
     }
 
-    // Cargar la primera transmisión por defecto
+    // Cargar el primer stream al abrir la página
     loadStream(streams[currentStreamIndex]);
 
     // Función para poner el video en pantalla completa
