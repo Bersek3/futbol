@@ -1,163 +1,137 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DIRECTV SPORTS</title>
-    <style type="text/css">
-        html, body {
-            height: 100%;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor de Transmisión</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
             margin: 0;
-            padding: 0;
-            overflow: hidden; /* Para evitar el desplazamiento vertical en dispositivos móviles */
-        }
-        .embed-responsive {
-            height: 100%;
-            position: relative;
+            font-family: 'Roboto', sans-serif;
+            background-color: #111;
+            color: white;
+            height: 100vh;
             overflow: hidden;
+            position: relative;
         }
-        .embed-responsive iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
+        #video {
             width: 100%;
-            height: 100%;
-            border: none;
-            z-index: 1; /* Asegura que el iframe esté en la parte posterior */
+            height: 100vh;
+            object-fit: cover;
+            pointer-events: none; /* Desactiva la interacción con el reproductor */
+            opacity: 1; /* Mantiene el video visible */
         }
-
-        .ad-blocker {
+        #fullscreen-button {
             position: fixed;
-            top: 0;
-            left: 0;
+            top: 20px;
+            right: 20px;
+            z-index: 200; /* Asegura que esté por encima del video */
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 40px;
+            height: 40px;
+            background-size: cover;
+        }
+        #fullscreen-button:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        .icon-expand {
+            --icon-url: url(https://davinci.zappingtv.com/static/app-icons/white/expand.svg);
+            background-image: var(--icon-url);
+            background-size: contain;
+            background-repeat: no-repeat;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.9); /* Color negro semi-transparente */
-            z-index: 2; /* Asegura que esté por encima del iframe */
-            display: none; /* Inicialmente oculto */
-        }
-
-        .arrow {
-            position: absolute;
-            top: 50%;
-            width: 50px;
-            height: 50px;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            text-align: center;
-            line-height: 50px;
-            font-size: 30px;
-            cursor: pointer;
-            z-index: 1000;
-            user-select: none;
-        }
-
-        .arrow.left {
-            left: 10px;
-        }
-
-        .arrow.right {
-            right: 10px;
-        }
-
-        /* Estilo para el menú desplegable */
-        .menu {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            z-index: 1000;
-            cursor: pointer;
-        }
-
-        .menu .icon {
-            display: block;
-            width: 30px;
-            height: 30px;
-            background-color: #333;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 30px;
-            color: white;
-        }
-
-        .menu .list {
-            display: none;
-            position: absolute;
-            top: 40px;
-            left: 0;
-            width: 200px;
-            background-color: #f9f9f9;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            border-radius: 5px;
-            z-index: 999;
-            padding: 10px;
-        }
-
-        .menu .list a {
-            display: block;
-            padding: 5px 10px;
-            color: #333;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-        }
-
-        .menu .list a:hover {
-            background-color: #e0e0e0;
-        }
-
-        /* Estilo para el texto en la parte superior del reproductor */
-        .top-text {
-            margin-top: 70px;
-            position: absolute;
-            top: 10%;
-            width: 100%;
-            text-align: center;
-            font-size: 24px;
-            color: red;
-            font-weight: bold;
-            z-index: 2; /* Asegura que esté por encima del iframe */
         }
     </style>
 </head>
 <body>
-    <div class="embed-responsive">
 
-        <iframe id="videoFrame" sandbox="allow-scripts allow-same-origin" allowfullscreen="true" scrolling="no" src="https://ringeling.zappingtv.com/v1/tntsports3_ll/live1/playlist.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjk4OTEwMjMxMSwidXVpZCI6IndMc1ZKdkZvbzNqVUx6VHdIa2RuUSJ9.01aoDkU_93u1a69lSZISBoxJOyI_7kg06e_zDMcHJLk" allow="encrypted-media; autoplay" width="100%" height="100%" frameborder="0" muted="false"></iframe>
-    </div>
+<video id="video" autoplay></video>
+<button id="fullscreen-button" class="icon-expand"></button>
 
-    <!-- Frame negro para bloquear anuncios -->
-    <div class="ad-blocker" id="adBlocker"></div>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<script>
+    const video = document.getElementById('video');
+    const fullscreenButton = document.getElementById('fullscreen-button');
 
-    <!-- Menú desplegable -->
-    <div class="menu" onclick="toggleMenu()">
-        <div class="icon">&#9776;</div>
-        <div class="list" id="menuList">
-            <a href="#" onclick="goToPage('index.html')">DIRECTV SPORTS</a>
-            <a href="#" onclick="goToPage('espn.html')">ESPN EN VIVO</a>
-            <a href="#" onclick="goToPage('tnt.html')">TNT SPORTS CHILE</a>
-        </div>
-    </div>
+    // Array de transmisiones
+    const streams = [
+        'https://ringeling.zappingtv.com/v1/tntsportshd_hevc_ll/live1/playlist_c.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjk4OTEwMjMxMSwidXVpZCI6IndMc1ZKdkZvbzNqVUx6VHdIa2RuUSJ9.01aoDkU_93u1a69lSZISBoxJOyI_7kg06e_zDMcHJLk',
+        'https://ringeling.zappingtv.com/v1/espn3_hevc_ll/live1/playlist_c.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjk4OTEwMjMxMSwidXVpZCI6IndMc1ZKdkZvbzNqVUx6VHdIa2RuUSJ9.01aoDkU_93u1a69lSZISBoxJOyI_7kg06e_zDMcHJLk',
+        'https://ringeling.zappingtv.com/v1/chv_hevc_ll/live1/playlist_c.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjk4OTEwMjMxMSwidXVpZCI6IndMc1ZKdkZvbzNqVUx6VHdIa2RuUSJ9.01aoDkU_93u1a69lSZISBoxJOyI_7kg06e_zDMcHJLk',
+        'https://ringeling.zappingtv.com/v1/mega_hevc/live1/playlist_c.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjk4OTEwMjMxMSwidXVpZCI6IndMc1ZKdkZvbzNqVUx6VHdIa2RuUSJ9.01aoDkU_93u1a69lSZISBoxJOyI_7kg06e_zDMcHJLk',
+        "https://ringeling.zappingtv.com/v1/tvno_hevc/live1/playlist_c.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjk4OTEwMjMxMSwidXVpZCI6IndMc1ZKdkZvbzNqVUx6VHdIa2RuUSJ9.01aoDkU_93u1a69lSZISBoxJOyI_7kg06e_zDMcHJLk",
+        "https://ringeling.zappingtv.com/v1/13_hevc_ll/live1/playlist_c.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjk4OTEwMjMxMSwidXVpZCI6IndMc1ZKdkZvbzNqVUx6VHdIa2RuUSJ9.01aoDkU_93u1a69lSZISBoxJOyI_7kg06e_zDMcHJLk",
+ 
 
-    <script>
-        function goToPage(page) {
-            document.getElementById('videoFrame').src = page;
-            closeMenu();
+    ];
+
+    let currentStreamIndex = 0;
+
+    // Función para cargar el stream
+    function loadStream(url) {
+        if (Hls.isSupported()) {
+            const hls = new Hls();
+            hls.loadSource(url);
+            hls.attachMedia(video);
+            hls.on(Hls.Events.MANIFEST_PARSED, function () {
+                video.play();
+            });
+        } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+            video.src = url;
+            video.play();
+        }
+    }
+
+    // Cargar la primera transmisión por defecto
+    loadStream(streams[currentStreamIndex]);
+
+    // Función para poner el video en pantalla completa
+    function toggleFullscreen() {
+        if (!document.fullscreenElement) {
+            video.requestFullscreen().catch(err => {
+                console.error(`Error al intentar ingresar a pantalla completa: ${err.message}`);
+            });
+        } else {
+            document.exitFullscreen();
+        }
+    }
+
+    // Al hacer clic en el ícono de pantalla completa
+    fullscreenButton.addEventListener('click', toggleFullscreen);
+
+    // Detectar cuando entra en pantalla completa para ocultar el botón
+    document.addEventListener('fullscreenchange', function () {
+        if (document.fullscreenElement) {
+            fullscreenButton.style.display = 'none';
+        } else {
+            fullscreenButton.style.display = 'block';
+        }
+    });
+
+    // Detectar la flecha hacia abajo para cambiar la transmisión
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'ArrowDown') {
+            // Cambiar al siguiente stream (flecha hacia abajo)
+            currentStreamIndex = (currentStreamIndex + 1) % streams.length;
+            loadStream(streams[currentStreamIndex]);
         }
 
-        function toggleMenu() {
-            var menuList = document.getElementById('menuList');
-            menuList.style.display = menuList.style.display === 'block' ? 'none' : 'block';
+        // Detectar la flecha hacia arriba para cambiar al stream anterior
+        if (event.key === 'ArrowUp') {
+            // Cambiar al stream anterior (flecha hacia arriba)
+            currentStreamIndex = (currentStreamIndex - 1 + streams.length) % streams.length;
+            loadStream(streams[currentStreamIndex]);
         }
+    });
 
-        function closeMenu() {
-            document.getElementById('menuList').style.display = 'none';
-        }
+</script>
 
-        // Función para mostrar/ocultar el frame negro
-        function toggleAdBlocker() {
-            var adBlocker = document.getElementById('adBlocker');
-            adBlocker.style.display = adBlocker.style.display === 'block' ? 'none' : 'block';
-        }
-    </script>
 </body>
 </html>
