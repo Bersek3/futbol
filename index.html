@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canales |</title>
+    <title>Reproductor de Transmisión</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
         body {
@@ -56,8 +56,7 @@
 </head>
 <body>
 
-<video id="video" muted></video> <!-- Asegúrate de agregar muted aquí si necesitas que inicie sin sonido, lo quitarás luego -->
-
+<video id="video" autoplay muted></video>
 <button id="fullscreen-button" class="icon-expand"></button>
 
 <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
@@ -85,12 +84,10 @@
             hls.attachMedia(video);
             hls.on(Hls.Events.MANIFEST_PARSED, function () {
                 video.play();
-                video.muted = false; // Quitar el mute cuando el video comienza a reproducirse
             });
         } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
             video.src = url;
             video.play();
-            video.muted = false; // Asegura que el video no esté silenciado al reproducirse
         }
     }
 
