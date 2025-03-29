@@ -14,6 +14,10 @@
             height: 100vh;
             overflow: hidden;
             position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: rotate(0deg); /* Asegura que se mantenga en horizontal */
         }
         #video {
             width: 100%;
@@ -52,7 +56,7 @@
 </head>
 <body>
 
-<video id="video" autoplay></video>
+<video id="video" autoplay muted></video>
 <button id="fullscreen-button" class="icon-expand"></button>
 
 <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
@@ -74,31 +78,20 @@
 
     // Función para cargar el stream
     function loadStream(url) {
-        const hls = new Hls();
-        
-        // Evento de error
-        hls.on(Hls.Events.ERROR, function(event, data) {
-            console.error('Error en el stream: ', data);
-        });
-
-        // Cargar el stream
-        hls.loadSource(url);
-        hls.attachMedia(video);
-
-        // Solo reproducir cuando el manifiesto está cargado
-        hls.on(Hls.Events.MANIFEST_PARSED, function () {
+        if (Hls.isSupported()) {
+            const hls = new Hls();
+            hls.loadSource(url);
+            hls.attachMedia(video);
+            hls.on(Hls.Events.MANIFEST_PARSED, function () {
+                video.play();
+            });
+        } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+            video.src = url;
             video.play();
-        });
-
-        // Reiniciar el video en cada cambio de stream
-        hls.on(Hls.Events.ERROR, function (event, data) {
-            if (data.fatal) {
-                console.error('Error fatal en el HLS:', data);
-            }
-        });
+        }
     }
 
-    // Cargar el primer stream al abrir la página
+    // Cargar la primera transmisión por defecto
     loadStream(streams[currentStreamIndex]);
 
     // Función para poner el video en pantalla completa
@@ -140,7 +133,7 @@
         }
     });
 
-    // Detectar el deslizamiento táctil en dispositivos móviles
+    // Detectar el deslizamiento táctil en dispositivos móviles (para cambio de stream)
     let touchStartY = 0;
     let touchEndY = 0;
 
@@ -150,18 +143,15 @@
 
     document.addEventListener('touchend', function (event) {
         touchEndY = event.changedTouches[0].clientY;
-
-        if (touchEndY < touchStartY) {
-            // Deslizó hacia arriba, cambiar al stream anterior
-            currentStreamIndex = (currentStreamIndex - 1 + streams.length) % streams.length;
-            loadStream(streams[currentStreamIndex]);
-        } else if (touchEndY > touchStartY) {
-            // Deslizó hacia abajo, cambiar al siguiente stream
+        if (touchStartY - touchEndY > 150) {
             currentStreamIndex = (currentStreamIndex + 1) % streams.length;
+            loadStream(streams[currentStreamIndex]);
+        }
+        if (touchEndY - touchStartY > 150) {
+            currentStreamIndex = (currentStreamIndex - 1 + streams.length) % streams.length;
             loadStream(streams[currentStreamIndex]);
         }
     });
 </script>
-
 </body>
 </html>
