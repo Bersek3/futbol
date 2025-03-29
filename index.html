@@ -56,6 +56,8 @@
 </head>
 <body>
 
+<video id="video" muted></video> <!-- Asegúrate de agregar muted aquí si necesitas que inicie sin sonido, lo quitarás luego -->
+
 <button id="fullscreen-button" class="icon-expand"></button>
 
 <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
@@ -83,10 +85,12 @@
             hls.attachMedia(video);
             hls.on(Hls.Events.MANIFEST_PARSED, function () {
                 video.play();
+                video.muted = false; // Quitar el mute cuando el video comienza a reproducirse
             });
         } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
             video.src = url;
             video.play();
+            video.muted = false; // Asegura que el video no esté silenciado al reproducirse
         }
     }
 
