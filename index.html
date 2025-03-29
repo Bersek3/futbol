@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canales</title>
+    <title>Reproductor de Transmisión</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
         body {
@@ -124,7 +124,7 @@
         }
     });
 
-    // Detectar la flecha hacia abajo para cambiar la transmisión
+    // Detectar la flecha hacia abajo para cambiar la transmisión (en dispositivos de escritorio)
     document.addEventListener('keydown', function (event) {
         if (event.key === 'ArrowDown') {
             // Cambiar al siguiente stream (flecha hacia abajo)
@@ -132,7 +132,7 @@
             loadStream(streams[currentStreamIndex]);
         }
 
-        // Detectar la flecha hacia arriba para cambiar al stream anterior
+        // Detectar la flecha hacia arriba para cambiar al stream anterior (en dispositivos de escritorio)
         if (event.key === 'ArrowUp') {
             // Cambiar al stream anterior (flecha hacia arriba)
             currentStreamIndex = (currentStreamIndex - 1 + streams.length) % streams.length;
@@ -140,6 +140,27 @@
         }
     });
 
+    // Detectar el deslizamiento táctil en dispositivos móviles
+    let touchStartY = 0;
+    let touchEndY = 0;
+
+    document.addEventListener('touchstart', function (event) {
+        touchStartY = event.touches[0].clientY;
+    });
+
+    document.addEventListener('touchend', function (event) {
+        touchEndY = event.changedTouches[0].clientY;
+
+        if (touchEndY < touchStartY) {
+            // Deslizó hacia arriba, cambiar al stream anterior
+            currentStreamIndex = (currentStreamIndex - 1 + streams.length) % streams.length;
+            loadStream(streams[currentStreamIndex]);
+        } else if (touchEndY > touchStartY) {
+            // Deslizó hacia abajo, cambiar al siguiente stream
+            currentStreamIndex = (currentStreamIndex + 1) % streams.length;
+            loadStream(streams[currentStreamIndex]);
+        }
+    });
 </script>
 
 </body>
