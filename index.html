@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reproductor de Transmisión</title>
+    <title>CANALES</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
         body {
@@ -66,13 +66,13 @@
 
     // Array de transmisiones
     const streams = [
-        'https://ringeling.zappingtv.com/v1/tntsportshd_hevc_ll/live1/playlist_c.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjk4OTEwMjMxMSwidXVpZCI6IndMc1ZKdkZvbzNqVUx6VHdIa2RuUSJ9.01aoDkU_93u1a69lSZISBoxJOyI_7kg06e_zDMcHJLk',
-        'https://ringeling.zappingtv.com/v1/espn3_hevc_ll/live1/playlist_c.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjk4OTEwMjMxMSwidXVpZCI6IndMc1ZKdkZvbzNqVUx6VHdIa2RuUSJ9.01aoDkU_93u1a69lSZISBoxJOyI_7kg06e_zDMcHJLk',
-        'https://ringeling.zappingtv.com/v1/chv_hevc_ll/live1/playlist_c.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjk4OTEwMjMxMSwidXVpZCI6IndMc1ZKdkZvbzNqVUx6VHdIa2RuUSJ9.01aoDkU_93u1a69lSZISBoxJOyI_7kg06e_zDMcHJLk',
-        "https://ringeling.zappingtv.com/v1/mega_hevc/live1/playlist_c.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjk4OTEwMjMxMSwidXVpZCI6IndMc1ZKdkZvbzNqVUx6VHdIa2RuUSJ9.01aoDkU_93u1a69lSZISBoxJOyI_7kg06e_zDMcHJLk",
-        "https://ringeling.zappingtv.com/v1/13_hevc_ll/live1/playlist_c.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjk4OTEwMjMxMSwidXVpZCI6IndMc1ZKdkZvbzNqVUx6VHdIa2RuUSJ9.01aoDkU_93u1a69lSZISBoxJOyI_7kg06e_zDMcHJLk",
-        "https://ringeling.zappingtv.com/v1/tvno_hevc/live1/playlist_c.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjk4OTEwMjMxMSwidXVpZCI6IndMc1ZKdkZvbzNqVUx6VHdIa2RuUSJ9.01aoDkU_93u1a69lSZISBoxJOyI_7kg06e_zDMcHJLk",
-        "https://ringeling.zappingtv.com/v1/zappingsports_hevc/live1/playlist_c.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjk4OTEwMjMxMSwidXVpZCI6IndMc1ZKdkZvbzNqVUx6VHdIa2RuUSJ9.01aoDkU_93u1a69lSZISBoxJOyI_7kg06e_zDMcHJLk",
+        'https://ringeling.zappingtv.com/v1/tntsportshd_hevc_ll/live1/playlist_c.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjk4OTEwMjMxMSwidXVpZCI6IlJnV0ZzOWRtZEZBM1Q4OGFZSlNtSiJ9.MCICZjLg68rbzr4IBOuV9nnecN2QN-82sQ0pFw8PVhE',
+        'https://ringeling.zappingtv.com/v1/espn3_hevc_ll/live1/playlist_c.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjk4OTEwMjMxMSwidXVpZCI6IlJnV0ZzOWRtZEZBM1Q4OGFZSlNtSiJ9.MCICZjLg68rbzr4IBOuV9nnecN2QN-82sQ0pFw8PVhE',
+        'https://ringeling.zappingtv.com/v1/chv_hevc_ll/live1/playlist_c.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjk4OTEwMjMxMSwidXVpZCI6IlJnV0ZzOWRtZEZBM1Q4OGFZSlNtSiJ9.MCICZjLg68rbzr4IBOuV9nnecN2QN-82sQ0pFw8PVhE',
+        "https://ringeling.zappingtv.com/v1/mega_hevc/live1/playlist_c.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjk4OTEwMjMxMSwidXVpZCI6IlJnV0ZzOWRtZEZBM1Q4OGFZSlNtSiJ9.MCICZjLg68rbzr4IBOuV9nnecN2QN-82sQ0pFw8PVhE",
+        "https://ringeling.zappingtv.com/v1/13_hevc_ll/live1/playlist_c.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjk4OTEwMjMxMSwidXVpZCI6IlJnV0ZzOWRtZEZBM1Q4OGFZSlNtSiJ9.MCICZjLg68rbzr4IBOuV9nnecN2QN-82sQ0pFw8PVhE",
+        "https://ringeling.zappingtv.com/v1/tvno_hevc/live1/playlist_c.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjk4OTEwMjMxMSwidXVpZCI6IlJnV0ZzOWRtZEZBM1Q4OGFZSlNtSiJ9.MCICZjLg68rbzr4IBOuV9nnecN2QN-82sQ0pFw8PVhE",
+        "https://ringeling.zappingtv.com/v1/zappingsports_hevc/live1/playlist_c.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjk4OTEwMjMxMSwidXVpZCI6IlJnV0ZzOWRtZEZBM1Q4OGFZSlNtSiJ9.MCICZjLg68rbzr4IBOuV9nnecN2QN-82sQ0pFw8PVhE",
     ];
 
     let currentStreamIndex = 0;
