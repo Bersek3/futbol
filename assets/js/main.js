@@ -1,8 +1,8 @@
 // Main v0.11 por Alplox 
 
 // MARK: Config
-const URL_JSON_CANALES_PRINCIPAL = 'https://raw.githubusercontent.com/Alplox/json-teles/main/canales.json';
-const URL_M3U_CANALES_IPTV = './canales.m3u';
+const URL_JSON_CANALES_PRINCIPAL = './canales.json';
+const URL_M3U_CANALES_IPTV = './canales.json';
 const TWITCH_PARENT = 'alplox.github.io';
 
 const CONTAINER_OVERLAY = document.querySelector('.container-overlay');
