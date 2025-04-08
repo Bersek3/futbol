@@ -1,4 +1,23 @@
 {
+        "Espn": {
+        "nombre": "24 horas",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/ESPN_wordmark.svg/554px-ESPN_wordmark.svg.png",
+        "señales": {
+            "iframe_url": [
+                "https://mdstrm.com/live-stream/57d1a22064f5d85712b20dab?volume=0"
+            ],
+            "m3u8_url": [
+                "https://cdn15.vivozytv.com/espn/tracks-v1a1/mono.m3u8?remote=191.114.150.182&token=cbea6af5024a325f61ea2987f65912702fd4477b-58b9adbd2614db74985cf0febe0c5864-1744155011-1744144211"
+            ],
+            "yt_id": "",
+            "yt_embed": "",
+            "yt_playlist": "",
+            "twitch_id": ""
+        },
+        "sitio_oficial": "",
+        "país": "cl",
+        "categoría": "news"
+    },
     "24-horas": {
         "nombre": "24 horas",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Logotipo_del_Canal_24_Horas.png",
