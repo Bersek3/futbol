@@ -1,6 +1,6 @@
 {
         "Espn": {
-        "nombre": "24 horas",
+        "nombre": "Espn",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/ESPN_wordmark.svg/554px-ESPN_wordmark.svg.png",
         "señales": {
             "iframe_url": [
