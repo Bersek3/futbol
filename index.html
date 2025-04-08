@@ -2,155 +2,97 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CANALES 7</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Roboto', sans-serif;
-            background-color: #111;
-            color: white;
-            height: 100vh;
-            overflow: hidden;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transform: rotate(0deg); /* Asegura que se mantenga en horizontal */
-        }
-        #video {
-            width: 100%;
-            height: 100vh;
-            object-fit: cover;
-            pointer-events: none; /* Desactiva la interacción con el reproductor */
-            opacity: 1; /* Mantiene el video visible */
-        }
-        #fullscreen-button {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 200; /* Asegura que esté por encima del video */
-            background-color: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            width: 40px;
-            height: 40px;
-            background-size: cover;
-        }
-        #fullscreen-button:hover {
-            background-color: rgba(0, 0, 0, 0.9);
-        }
-        .icon-expand {
-            --icon-url: url(https://davinci.zappingtv.com/static/app-icons/white/expand.svg);
-            background-image: var(--icon-url);
-            background-size: contain;
-            background-repeat: no-repeat;
-            width: 100%;
-            height: 100%;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://unpkg.com/modern-normalize@1.1.0/modern-normalize.css">
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link href="https://unpkg.com/video.js/dist/video-js.min.css" rel="stylesheet">
+    <script defer src="https://unpkg.com/video.js/dist/video.min.js"></script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#051320" />
+
+    <title></title>
+    <meta name="title" content="La tele">
+    <meta name="description" content="Canales de Chile a un toque.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alplox.github.io/la-tele/">
+    <meta property="og:title" content="La tele">
+    <meta property="og:description" content="Canales de Chile a un toque.">
+    <meta property="og:image" content="assets/img/Previews/shots_la_tele_v0-10.jpg">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://alplox.github.io/la-tele/">
+    <meta property="twitter:title" content="La tele">
+    <meta property="twitter:description" content="Canales de Chile a un toque.">
+    <meta property="twitter:image"
+        content="assets/img/Previews/shots_la_tele_v0-10.jpg">
+    <script type="module">
+        import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+        const el = document.createElement('pwa-update');
+        el.swpath = "pwabuilder-sw.js"
+        el.updatemessage = "Nueva versión disponible";
+        el.offlineToastDuration = 2000;
+        document.body.appendChild(el);
+    </script>
+    <script src="https://unpkg.com/akar-icons-fonts"></script>
+    <script src="assets/js/main.js" type="module"></script>
 </head>
+
 <body>
+    <!-- Alerta javascript desactivado -->
+    <noscript>
+        <p>El sitio <b>no</b> funciona sin <b>JavaScript</b>.</p>
+        <p>Si lo has deshabilitado, por favor <b>vuelve a activarlo</b>.</p>
+    </noscript>
 
-<video id="video" autoplay></video>
-<button id="fullscreen-button" class="icon-expand"></button>
+    <!-- video y listado canales -->
+    <section class="wrapper-all">
+        <header class="header-principal"> 
+            <a href="./" target="_self" tabindex="0"><h1>Prueba</h1></a>
+            </a>
+        </header>
+        <main class="main-grid">   
+            <div class="container-video sombra">
+                <div class="container-overlay d-none">
+                    <div class="overlay">
+                        <details class="dropdown-señales">
+                            <summary role="button" class="boton boton-accion boton-señales">
+                              Señales
+                            </summary>
+                            <ul id="lista-señales">
+                            </ul>
+                        </details>
+                        <a id="nombre-overlay" rel="nofollow noopener"></a>
+                        <button type="button" role="button" class="boton boton-overlay-quitar-señal" id="boton-overlay-quitar-señal" title="Quitar señal activa" tabindex="0">
+                            <i class="ai-cross"></i>
+                        </button>
+                    </div>
+                </div>
+                <button type="button" role="button" class="boton boton-alternar-visibilidad-overlay boton-accion sombra" id="boton-alternar-visibilidad-overlay" title="Nombre sobre transmisiones on/off" disabled>
+                    <span id="span-boton-alternar-visibilidad-overlay"><i class="ai-eye-closed"></i></span>
+                </button>
+                <div class="container-transmision" id="container-transmision"></div>
+                <div class="container-texto-detras-container-transmision">
+                </div>
+            </div>
+            <aside class="container-botones-canales sombra">
+                <input class="filtro" id="filtro" type="search" title="Buscador" placeholder="Buscar canal" tabindex="0" lang="es">
+                <div class="flip-container" id="flip-container">
+                    <div class="flipper" id="flipper">
+                        <div class="lista-botones front" id="lista-botones"></div>
+                        <div class="lista-botones back" id="lista-botones-m3u8" tabindex="-1"></div>
+                    </div>
+                </div>
+                <button type="button" role="button" class="boton boton-accion" id="boton-alternar-lista-canales" title="Alternar entre lista IPTV">
+                    Alternar listado <i class="ai-arrow-forward-thick"></i>
+                </button>
+            </aside>
+        </main>
+    </section>
+   
 
-<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-<script>
-    const video = document.getElementById('video');
-    const fullscreenButton = document.getElementById('fullscreen-button');
-
-    // Array de transmisiones
-    const streams = [
-        "https://jf4.naqsheala.com:999/hls/chiletv.m3u8?md5=WxWJjpSHiOzI_EjYcy97OA&expires=1744069099",
-        "https://deportes.slkdhfdhldeportes.com:8080/NDUuMjMyLjkzLjky/14_.m3u8?token=UWM35yixE05k_SYRqFP7Mw&expires=1744068932",
-        "https://dai.google.com/linear/hls/pa/event/bFL1IVq9RNGlWQaqgiFuNw/stream/a3edbc1e-3f16-4411-ac82-439e633d4a3f:SCL/variant/6111ad30657a583ad044dfe707c7e95d/bandwidth/2305600.m3u8",
-        "https://cl-a6-i-e-qp1.cdn.mdstrm.com/live-stream-gdai/linear/hls/pa/event/V1j9hgJXRtKjBeFfx3xzFQ/stream/46a5b80e-b846-4ea9-b245-69bbf410d169:TUL/variant/061e2119ac32bb7399dac44a1c1ea721/bandwidth/3294610.m3u8?aid=598861d8cc3c169b2236f987&uid=YhzdXB4PZgJXftc8gURXBoVixxuTiB91&sid=2P25QbkQkcFIpXWzi6boJoI9o9b7ERqh&pid=2YLO8vxJMx861eGdY4awTXvWlUcn5sq9&ref=https%3A%2F%2Fwww.chilevision.cl%2F&without_cookies=false&listenerid=&dnt=true&access_token=vyDZP3tVW5PEaCtw1RJ5gVPT2DtE4Gp1C2YouMGvvci035TwIdR555Sune9jtEK0a1f0P6EwgUk&adInsertionGoogleStreamId=46a5b80e-b846-4ea9-b245-69bbf410d169%3ATUL&es=cl-a6-i-e-qp1.cdn.mdstrm.com&ote=1744147974383&ot=lNWLFfthbjwvVpFryVnI8w&proto=https&pz=cl",
-        "https://cl-a6-i-e-qp1.cdn.mdstrm.com/live-stream-gdai/linear/hls/pa/event/-4KOuBUDTUaXhzNVqMNjsQ/stream/c8738d3b-b738-4715-a4b9-d332a634a86d:CBF2/variant/49e4e3357769f767a77d01bfee2f5d9b/bandwidth/5090800.m3u8?aid=51c2f628b440bd797900051f&uid=YhzdXB4PZgJXftc8gURXBoVixxuTiB91&sid=2P25QbkQkcFIpXWzi6boJoI9o9b7ERqh&pid=R8LIn5dXGeCOngnUWGQ3MfWTv7sDNpIu&ref=https%3A%2F%2Flive.tvn.cl%2F&without_cookies=false&listenerid=&dnt=true&access_token=AjybHaMnBBbpDq2xW15MVtcmYZmXp0OXRZNkLj2X7qHTvEucHQCp7JAbVZuhtLbetakni4B0nng&adInsertionGoogleStreamId=c8738d3b-b738-4715-a4b9-d332a634a86d%3ACBF2&es=cl-a6-i-e-qp1.cdn.mdstrm.com&ote=1744147930830&ot=WUA0MFkmH1yFsxaalWC2QA&proto=https&pz=cl",
-        'https://cl-a6-i-e-lz2.cdn.mdstrm.com/live-stream-gdai/linear/hls/pa/event/TdvXGBreTYyJZiwX63BRIA/stream/25c57637-8b43-4aaa-9fdd-81e3214c4036:DLS/variant/4d10008c9453beed2b5af1f9790ca7be/bandwidth/5530800.m3u8?aid=53bc2bcae41e2d9c662e1ba7&uid=YhzdXB4PZgJXftc8gURXBoVixxuTiB91&sid=2P25QbkQkcFIpXWzi6boJoI9o9b7ERqh&pid=gydbtFFAQ2tR0c6DYaz3Qx0OD5kl62ar&ref=https%3A%2F%2Fwww.mega.cl%2F&without_cookies=false&listenerid=&dnt=true&access_token=MiPygQdJvHUR1MRBTs7NLKpRFRTrSFUdBEvRPeDlGyB12bJWMouPpauB8hTbKMBP16SSvErSVJP&adInsertionGoogleStreamId=25c57637-8b43-4aaa-9fdd-81e3214c4036%3ADLS&es=cl-a6-i-e-lz2.cdn.mdstrm.com&ote=1744147789704&ot=xDKKmrLlwdudbxFv2Bpliw&proto=https&pz=cl',
-    ]
-    let currentStreamIndex = 0;
-
-    // Función para cargar el stream
-    function loadStream(url) {
-        if (Hls.isSupported()) {
-            const hls = new Hls();
-            hls.loadSource(url);
-            hls.attachMedia(video);
-            hls.on(Hls.Events.MANIFEST_PARSED, function () {
-                video.play();
-            });
-        } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-            video.src = url;
-            video.play();
-        }
-    }
-
-    // Cargar la primera transmisión por defecto
-    loadStream(streams[currentStreamIndex]);
-
-    // Función para poner el video en pantalla completa
-    function toggleFullscreen() {
-        if (!document.fullscreenElement) {
-            video.requestFullscreen().catch(err => {
-                console.error(`Error al intentar ingresar a pantalla completa: ${err.message}`);
-            });
-        } else {
-            document.exitFullscreen();
-        }
-    }
-
-    // Al hacer clic en el ícono de pantalla completa
-    fullscreenButton.addEventListener('click', toggleFullscreen);
-
-    // Detectar cuando entra en pantalla completa para ocultar el botón
-    document.addEventListener('fullscreenchange', function () {
-        if (document.fullscreenElement) {
-            fullscreenButton.style.display = 'none';
-        } else {
-            fullscreenButton.style.display = 'block';
-        }
-    });
-
-    // Detectar la flecha hacia abajo para cambiar la transmisión (en dispositivos de escritorio)
-    document.addEventListener('keydown', function (event) {
-        if (event.key === 'ArrowDown') {
-            // Cambiar al siguiente stream (flecha hacia abajo)
-            currentStreamIndex = (currentStreamIndex + 1) % streams.length;
-            loadStream(streams[currentStreamIndex]);
-        }
-
-        // Detectar la flecha hacia arriba para cambiar al stream anterior (en dispositivos de escritorio)
-        if (event.key === 'ArrowUp') {
-            // Cambiar al stream anterior (flecha hacia arriba)
-            currentStreamIndex = (currentStreamIndex - 1 + streams.length) % streams.length;
-            loadStream(streams[currentStreamIndex]);
-        }
-    });
-
-    // Detectar el deslizamiento táctil en dispositivos móviles (para cambio de stream)
-    let touchStartY = 0;
-    let touchEndY = 0;
-
-    document.addEventListener('touchstart', function (event) {
-        touchStartY = event.touches[0].clientY;
-    });
-
-    document.addEventListener('touchend', function (event) {
-        touchEndY = event.changedTouches[0].clientY;
-        if (touchStartY - touchEndY > 150) {
-            currentStreamIndex = (currentStreamIndex + 1) % streams.length;
-            loadStream(streams[currentStreamIndex]);
-        }
-        if (touchEndY - touchStartY > 150) {
-            currentStreamIndex = (currentStreamIndex - 1 + streams.length) % streams.length;
-            loadStream(streams[currentStreamIndex]);
-        }
-    });
-</script>
 </body>
 </html>
