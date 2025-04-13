@@ -237,19 +237,21 @@ function crearIframe(canalId, tipoSeñalParaIframe, valorIndex = 0) {
     return DIV_ELEMENT;
 }
 
-function crearVideoJs(urlCarga) {
-    const DIV_ELEMENT = document.createElement('div');
-        DIV_ELEMENT.classList.add('h-100');
-    const videoElement = document.createElement('video');
-        videoElement.classList.add('video-js', 'vjs-16-9', 'vjs-fill');
-        videoElement.toggleAttribute('controls');
-        DIV_ELEMENT.append(videoElement);
-    videojs(videoElement).src({
-        src: urlCarga,
-        controls: true,
-    });
-    videojs(videoElement).autoplay('muted');
-    return DIV_ELEMENT;
+function crearVideoJs(m3u8_url) {
+  let videoElement = document.createElement("video");
+  videoElement.setAttribute("controls", "true");
+  videoElement.setAttribute("width", "100%");
+  videoElement.setAttribute("height", "auto");
+  
+  let player = videojs(videoElement, {
+    techOrder: ["html5"],
+    sources: [{
+      src: m3u8_url,
+      type: "application/x-mpegURL"
+    }]
+  });
+  
+  return videoElement;
 }
 
 function crearFragmentCanal(canales, valorIndexArrayCanales) {
