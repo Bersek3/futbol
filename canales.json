@@ -134,8 +134,7 @@
         "señales": {
             "iframe_url": [],
             "m3u8_url": [
-                "https://mdstrm.com/live-stream-playlist-v/555c9a91eb4886825b07ee7b.m3u8",
-                "https://marine2.miplay.cl/tvnchile/index.m3u8"
+                "https://mdstrm.com/live-stream-playlist/5346f5f2c1e6f5810b5b9df0.m3u8?WebM3UCL",
             ],
             "yt_id": "UCaVaCaiG6qRzDiJDuEGKOhQ",
             "yt_embed": "",
