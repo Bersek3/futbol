@@ -238,11 +238,13 @@ function crearIframe(canalId, tipoSeñalParaIframe, valorIndex = 0) {
 }
 
 function crearVideoJs(m3u8_url) {
+  // Crear el elemento de video
   let videoElement = document.createElement("video");
   videoElement.setAttribute("controls", "true");
   videoElement.setAttribute("width", "100%");
   videoElement.setAttribute("height", "auto");
   
+  // Intentar cargar el video con Video.js
   let player = videojs(videoElement, {
     techOrder: ["html5"],
     sources: [{
@@ -251,6 +253,16 @@ function crearVideoJs(m3u8_url) {
     }]
   });
   
+  // Comprobar si Video.js tiene problemas cargando el stream
+  player.ready(function() {
+    if (!player.src()) {
+      console.error("No se pudo cargar el stream M3U8.");
+      let errorMessage = document.createElement("p");
+      errorMessage.textContent = "No se pudo cargar el canal. Verifica la URL o intenta más tarde.";
+      videoElement.parentElement.appendChild(errorMessage);
+    }
+  });
+
   return videoElement;
 }
 
