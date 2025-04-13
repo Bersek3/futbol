@@ -227,8 +227,7 @@
                 "https://rudo.video/live/c13"
             ],
             "m3u8_url": [
-                "https://jireh-hls-live-video.dpsgo.com/hls-video/10b92cafdf3646cbc1e727f3dc76863621a327fd/c13/playlist.m3u8",
-                "https://marine2.miplay.cl/c13/index.m3u8"
+                "https://dai.google.com/linear/hls/pa/event/bFL1IVq9RNGlWQaqgiFuNw/stream/75adbebd-47b1-4c9b-a2cd-40c603a898a2:SCL/variant/6111ad30657a583ad044dfe707c7e95d/bandwidth/2305600.m3u8",
             ],
             "yt_id": "UCd4D3LfXC_9MY2zSv_3gMgw",
             "yt_embed": "",
