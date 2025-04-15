@@ -154,7 +154,29 @@
         "sitio_oficial": "https://www.t13.cl/en-vivo",
         "país": "cl",
         "categoría": "news"
+    },
+
+                "Direct_tv": {
+        "nombre": "DirectTV Sports ",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/0/09/Logotipo_de_Teletrece.svg",
+        "señales": {
+            "iframe_url": [
+            ],
+            "m3u8_url": [
+                "https://cdn16.vivozytv.com/dsports/index.m3u8?token=5987c520a945e3e80c5cef1fbe68ed0179f14376-fa8947a35b0ef36359b29f3a6c1069b4-1744759066-1744748266&remote=190.217.193.164"
+
+            ],
+            "yt_id": "UCsRnhjcUCR78Q3Ud6OXCTNg",
+            "yt_embed": "",
+            "yt_playlist": "",
+            "twitch_id": "t13envivo"
+        },
+        "sitio_oficial": "https://www.t13.cl/en-vivo",
+        "país": "cl",
+        "categoría": "news"
     }
+  
+}
   
 }
 
