@@ -80,8 +80,8 @@
                         </button>
                     </div>
                 </div>
-                <button type="button" role="button" class="boton boton-alternar-visibilidad-overlay boton-accion sombra" id="boton-alternar-visibilidad-overlay" title="Nombre sobre transmisiones on/off" disabled>
-                    <span id="span-boton-alternar-visibilidad-overlay"><i class="ai-eye-closed"></i></span>
+                <button type="button" role="button"  id="boton-alternar-visibilidad-overlay" title="Nombre sobre transmisiones on/off" disabled>
+                   
                 </button>
                 <div class="container-transmision" id="container-transmision"></div>
                 <div class="container-texto-detras-container-transmision">
@@ -102,13 +102,17 @@
                         <div class="lista-botones back" id="lista-botones-m3u8" tabindex="-1"></div>
                     </div>
                 </div>
-                <button type="button" role="button" class="boton boton-accion" id="boton-alternar-lista-canales" title="Alternar entre lista IPTV">
-                    Alternar listado <i class="ai-arrow-forward-thick"></i>
-                </button>
+
             </aside>
         </main>
     </section>
-   
+    <script src="https://unpkg.com/videojs-http-source-selector@1.1.5/dist/videojs-http-source-selector.min.js"></script>
+
+    <script>
+      player.httpSourceSelector();
+    </script>
+
+    
 
 </body>
 </html>
