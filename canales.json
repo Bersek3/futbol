@@ -115,25 +115,6 @@
         "país": "cl",
         "categoría": "news"
     },
-    "wwe": {
-        "nombre": "WWE",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/0/09/Logotipo_de_Teletrece.svg",
-        "señales": {
-            "iframe_url": [
-            ],
-            "m3u8_url": [
-                "https://madrid.crackstreamslivehd.com/wwe/index.m3u8?token=43dbb80e3b8c09742b40979acf6751d9d2ca0d3e-24-1744722212-1744689812&ip=191.114.132.152"
-
-            ],
-            "yt_id": "UCsRnhjcUCR78Q3Ud6OXCTNg",
-            "yt_embed": "",
-            "yt_playlist": "",
-            "twitch_id": "t13envivo"
-        },
-        "sitio_oficial": "https://www.t13.cl/en-vivo",
-        "país": "cl",
-        "categoría": "news"
-    },
 
         "Champions": {
         "nombre": "PSG vs Aston Villa",
