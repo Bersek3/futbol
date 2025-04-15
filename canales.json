@@ -1,21 +1,5 @@
 {
-        "TheLastOfUs": {
-        "nombre": "The Last Of Us",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Logotipo_del_Canal_24_Horas.png",
-        "señales": {
-            "iframe_url": []
-            "m3u8_url": [
-                "https://ye0r0rrinu.premilkyway.com/hls2/01/09544/k9va9grp2xl0_,l,n,h,.urlset/master.m3u8?t=UgS7l3Bk3KsMgPfYxvwUJJ9UUyp4rvTtI8gpuhUM5PA&s=1744675294&e=129600&f=47722876&srv=3FjgDmcnea8S35m&i=0.4&sp=500&p1=3FjgDmcnea8S35m&p2=3FjgDmcnea8S35m&asn=14117"
-            ],
-            "yt_id": "UCTXNz3gjAypWp3EhlIATEJQ",
-            "yt_embed": "",
-            "yt_playlist": "",
-            "twitch_id": "24horas_tvn"
-        },
-        "sitio_oficial": "https://www.24horas.cl/envivo/",
-        "país": "cl",
-        "categoría": "news"
-    },
+
     "24-horas": {
         "nombre": "24 horas",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Logotipo_del_Canal_24_Horas.png",
