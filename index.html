@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
+<!-- 
+    la tele por Alplox
+    https://github.com/Alplox/la-tele (v0.11)
+-->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,15 +11,6 @@
     <link rel="stylesheet" href="https://unpkg.com/modern-normalize@1.1.0/modern-normalize.css">
     <link rel="stylesheet" href="assets/css/style.css" />
     <link href="https://unpkg.com/video.js/dist/video-js.min.css" rel="stylesheet">
-    <!-- Video.js CSS -->
-<link href="https://cdn.jsdelivr.net/npm/video.js@7.10.2/dist/video-js.min.css" rel="stylesheet">
-
-<!-- Video.js -->
-<script src="https://cdn.jsdelivr.net/npm/video.js@7.10.2/dist/video.min.js"></script>
-
-<!-- Video.js HLS plugin -->
-<script src="https://cdn.jsdelivr.net/npm/videojs-contrib-hls@5.15.0/dist/videojs-contrib-hls.min.js"></script>
-
     <script defer src="https://unpkg.com/video.js/dist/video.min.js"></script>
 
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
@@ -24,7 +19,7 @@
     <link rel="manifest" href="site.webmanifest">
     <meta name="theme-color" content="#051320" />
 
-    <title></title>
+    <title>La tele</title>
     <meta name="title" content="La tele">
     <meta name="description" content="Canales de Chile a un toque.">
     <meta property="og:type" content="website">
@@ -60,7 +55,9 @@
     <!-- video y listado canales -->
     <section class="wrapper-all">
         <header class="header-principal"> 
-            <a href="./" target="_self" tabindex="0"><h1>Prueba</h1></a>
+            <a href="./" target="_self" tabindex="0"><h1>La tele</h1></a>
+            <a href="https://alplox.github.io/teles/" rel="nofollow noreferrer noopener" target="_self" tabindex="0">
+                <img class="img-teles" src="https://alplox.github.io/teles/assets/favicon/favicon-16x16.png" alt="logo teles"> teles <i class="ai-link-out"></i>
             </a>
         </header>
         <main class="main-grid">   
@@ -80,8 +77,8 @@
                         </button>
                     </div>
                 </div>
-                <button type="button" role="button"  id="boton-alternar-visibilidad-overlay" title="Nombre sobre transmisiones on/off" disabled>
-                   
+                <button type="button" role="button" class="boton boton-alternar-visibilidad-overlay boton-accion sombra" id="boton-alternar-visibilidad-overlay" title="Nombre sobre transmisiones on/off" disabled>
+                    <span id="span-boton-alternar-visibilidad-overlay"><i class="ai-eye-closed"></i></span>
                 </button>
                 <div class="container-transmision" id="container-transmision"></div>
                 <div class="container-texto-detras-container-transmision">
@@ -102,10 +99,19 @@
                         <div class="lista-botones back" id="lista-botones-m3u8" tabindex="-1"></div>
                     </div>
                 </div>
-
+                <button type="button" role="button" class="boton boton-accion" id="boton-alternar-lista-canales" title="Alternar entre lista IPTV">
+                    Alternar listado <i class="ai-arrow-forward-thick"></i>
+                </button>
             </aside>
         </main>
     </section>
+   
 
+            <div class="modal-footer">
+                <button type="button" role="button" class="boton boton-modal-entendido sombra"
+                id="boton-modal-entendido">Entendido</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
