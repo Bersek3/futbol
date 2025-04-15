@@ -133,6 +133,26 @@
         "sitio_oficial": "https://www.t13.cl/en-vivo",
         "país": "cl",
         "categoría": "news"
+    },
+
+        "Champions": {
+        "nombre": "PSG vs Aston Villa",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/0/09/Logotipo_de_Teletrece.svg",
+        "señales": {
+            "iframe_url": [
+            ],
+            "m3u8_url": [
+                "https://39osta28l0q8tvo4.tamalpsdrtd.lat/v3/director/VE1MzYwOTNhNDY3NDQ5LWRlM2ItOTM4NC1hM2RhLTg1NzFmYjk5/master.m3u8?md5=DDp44FJxUYfGADhFKSbi_g&expires=1744755212"
+
+            ],
+            "yt_id": "UCsRnhjcUCR78Q3Ud6OXCTNg",
+            "yt_embed": "",
+            "yt_playlist": "",
+            "twitch_id": "t13envivo"
+        },
+        "sitio_oficial": "https://www.t13.cl/en-vivo",
+        "país": "cl",
+        "categoría": "news"
     }
   
 }
