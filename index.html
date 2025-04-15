@@ -112,7 +112,38 @@
       player.httpSourceSelector();
     </script>
 
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const esMovil = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     
+      if (esMovil) {
+        const esperarPlayer = setInterval(() => {
+          const videoElement = document.querySelector('video');
+    
+          if (videoElement && videoElement.readyState >= 1) {
+            clearInterval(esperarPlayer);
+    
+            // Espera un segundo para asegurarse que está listo
+            setTimeout(() => {
+              // Pantalla completa
+              if (videoElement.requestFullscreen) {
+                videoElement.requestFullscreen().catch(console.warn);
+              } else if (videoElement.webkitRequestFullscreen) {
+                videoElement.webkitRequestFullscreen();
+              } else if (videoElement.msRequestFullscreen) {
+                videoElement.msRequestFullscreen();
+              }
+    
+              // Orientación horizontal
+              if (screen.orientation && screen.orientation.lock) {
+                screen.orientation.lock("landscape").catch(console.warn);
+              }
+            }, 1000);
+          }
+        }, 500);
+      }
+    });
+    </script>
 
 </body>
 </html>
