@@ -2,7 +2,7 @@
 
 // MARK: Config
 const URL_JSON_CANALES_PRINCIPAL = './canales.json';
-const URL_M3U_CANALES_IPTV = './canales.json';
+const URL_M3U_CANALES_IPTV = 'https://raw.githubusercontent.com/Bersek3/futbol/refs/heads/main/chile.m3u';
 const TWITCH_PARENT = 'alplox.github.io';
 
 const CONTAINER_OVERLAY = document.querySelector('.container-overlay');
