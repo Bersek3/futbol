@@ -3,11 +3,9 @@
         "nombre": "ChileVision",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Logotipo_del_Canal_24_Horas.png",
         "señales": {
-            "iframe_url": [
-
-            ],
+            "iframe_url": [],
             "m3u8_url": [
-                "https://mdstrm.com/live-stream-playlist/6491ced935a5833c47dd7f41.m3u8"
+                "https://cl-a3-p-e-uy6.cdn.mdstrm.com/live-stream/6491ced935a5833c47dd7f41/publish/media_2500.m3u8?aid=598861d8cc3c169b2236f987&pid=MRJhanLgj2MkNboYgFqMm8EVwfMTlRLb&sid=SAHvYnQ3MRWnrd2kT8BcaGd0KPvTubFz&uid=pqyMxm5ruyJYcxKeVHLmny04Y2LdJHXk&es=cl-a3-p-e-uy6.cdn.mdstrm.com&ote=1744779856990&ot=WFEpLSAJrek8dlhn2nzRqA&proto=https&pz=cl"
             ],
             "yt_id": "",
             "yt_embed": "",
@@ -18,7 +16,7 @@
         "país": "cl",
         "categoría": "news"
     },
-
+   
     "24-horas": {
         "nombre": "Tvn",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Logotipo_del_Canal_24_Horas.png",
@@ -63,7 +61,7 @@
             "iframe_url": [
             ],
             "m3u8_url": [
-                "https://dai.google.com/linear/hls/pa/event/bFL1IVq9RNGlWQaqgiFuNw/stream/717c5764-eee3-4e0a-9ae2-931eb4bdc47c:SCL/master.m3u8"
+                "https://dai.google.com/linear/hls/pa/event/bFL1IVq9RNGlWQaqgiFuNw/stream/a5e5205e-4618-40cc-80b4-94405ff5936a:SCL/variant/6111ad30657a583ad044dfe707c7e95d/bandwidth/2305600.m3u8"
  
             ],
             "yt_id": "UCsRnhjcUCR78Q3Ud6OXCTNg",
@@ -76,14 +74,34 @@
         "categoría": "news"
     },
 
-    "espn-premium": {
-        "nombre": "Espn Premium",
+
+    "fox-sports": {
+        "nombre": "Real Madrid vs Arsenal",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/0/09/Logotipo_de_Teletrece.svg",
         "señales": {
             "iframe_url": [
             ],
             "m3u8_url": [
-                "https://cdn19.vivozytv.com/espnpremium/index.m3u8?token=c2b3b116eb32cd3d8fdc94da1ab0307729a540f6-1a032cb93555a6895bcc0ce2aeab11c0-1744758985-1744748185&remote=190.217.193.164"
+                "https://c2f2zq.fubohd.com/foxsports/mono.m3u8?token=653e7a5db41a25b3aaea42e70e611427fcafee61-2c-1744793685-1744775685"
+
+            ],
+            "yt_id": "UCsRnhjcUCR78Q3Ud6OXCTNg",
+            "yt_embed": "",
+            "yt_playlist": "",
+            "twitch_id": "t13envivo"
+        },
+        "sitio_oficial": "https://www.t13.cl/en-vivo",
+        "país": "cl",
+        "categoría": "news"
+    },
+    "Espn-1": {
+        "nombre": "Inter vs Bayern Munich",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/0/09/Logotipo_de_Teletrece.svg",
+        "señales": {
+            "iframe_url": [
+            ],
+            "m3u8_url": [
+                "https://57b.crackstreamslivehd.com/espn/tracks-v1a1/mono.m3u8?ip=191.114.132.152&token=d69e17ea4a8f5b0490b318086912735804f6c0d6-4d-1744800355-1744767955"
 
             ],
             "yt_id": "UCsRnhjcUCR78Q3Ud6OXCTNg",
@@ -96,85 +114,41 @@
         "categoría": "news"
     },
 
-    "tnt-sport": {
-        "nombre": "Tnt Sport Premium",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/0/09/Logotipo_de_Teletrece.svg",
+    "CDF Premium": {
+        "nombre": "Universidad de Chile vs La Serena",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Canal_del_F%C3%BAtbol_logo_2020.svg/512px-Canal_del_F%C3%BAtbol_logo_2020.svg.png",
         "señales": {
-            "iframe_url": [
-            ],
+            "iframe_url": [],
             "m3u8_url": [
-                "https://miami.crackstreamslivehd.com/max2/index.m3u8?token=ec10fe4f3224cbfe8b380d37e7235bf65c6334b7-f2-1744722109-1744689709&ip=191.114.132.152"
-
+                "https://florcd.crackstreamslivehd.com/max4/index.m3u8?token=15222150f889bd844aee8b761567dffe67b355e7-3e-1744801788-1744769388&ip=191.114.132.152"
             ],
-            "yt_id": "UCsRnhjcUCR78Q3Ud6OXCTNg",
+            "yt_id": "",
             "yt_embed": "",
             "yt_playlist": "",
-            "twitch_id": "t13envivo"
+            "twitch_id": ""
         },
-        "sitio_oficial": "https://www.t13.cl/en-vivo",
+        "sitio_oficial": "",
         "país": "cl",
         "categoría": "news"
     },
 
-        "Champions": {
-        "nombre": "PSG vs Aston Villa",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/0/09/Logotipo_de_Teletrece.svg",
+    "La-liga-2d": {
+        "nombre": "La Liga 2D ( SOLO EVENTOS)",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Canal_del_F%C3%BAtbol_logo_2020.svg/512px-Canal_del_F%C3%BAtbol_logo_2020.svg.png",
         "señales": {
-            "iframe_url": [
-            ],
+            "iframe_url": [],
             "m3u8_url": [
-                "https://b2zmawnpyww.fubohd.com/espn/mono.m3u8?token=3f743f5ea525697c2546aa211888cc8342f1fc0f-fc-1744762156-1744744156"
-
+                ""
             ],
-            "yt_id": "UCsRnhjcUCR78Q3Ud6OXCTNg",
+            "yt_id": "",
             "yt_embed": "",
             "yt_playlist": "",
-            "twitch_id": "t13envivo"
+            "twitch_id": ""
         },
-        "sitio_oficial": "https://www.t13.cl/en-vivo",
-        "país": "cl",
-        "categoría": "news"
-    },
-
-            "Champions": {
-        "nombre": "Barcelona vs Borussia ",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/0/09/Logotipo_de_Teletrece.svg",
-        "señales": {
-            "iframe_url": [
-            ],
-            "m3u8_url": [
-                "https://deportes.slkdhfdhldeportes.com:8080/MTkwLjIxNy4xOTYuNTk=/13_110.ts"
-
-            ],
-            "yt_id": "UCsRnhjcUCR78Q3Ud6OXCTNg",
-            "yt_embed": "",
-            "yt_playlist": "",
-            "twitch_id": "t13envivo"
-        },
-        "sitio_oficial": "https://www.t13.cl/en-vivo",
-        "país": "cl",
-        "categoría": "news"
-    },
-
-                "Direct_tv": {
-        "nombre": "DirectTV Sports ",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/0/09/Logotipo_de_Teletrece.svg",
-        "señales": {
-            "iframe_url": [
-            ],
-            "m3u8_url": [
-                "https://cdn16.vivozytv.com/dsports/index.m3u8?token=5987c520a945e3e80c5cef1fbe68ed0179f14376-fa8947a35b0ef36359b29f3a6c1069b4-1744759066-1744748266&remote=190.217.193.164"
-
-            ],
-            "yt_id": "UCsRnhjcUCR78Q3Ud6OXCTNg",
-            "yt_embed": "",
-            "yt_playlist": "",
-            "twitch_id": "t13envivo"
-        },
-        "sitio_oficial": "https://www.t13.cl/en-vivo",
+        "sitio_oficial": "",
         "país": "cl",
         "categoría": "news"
     }
-  
-}
 
+
+}
