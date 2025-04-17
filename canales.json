@@ -148,7 +148,28 @@
         "sitio_oficial": "",
         "país": "cl",
         "categoría": "news"
+    },
+
+        "La-liga-2d-opc2": {
+        "nombre": "La Liga 2D ( SOLO EVENTOS)",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Canal_del_F%C3%BAtbol_logo_2020.svg/512px-Canal_del_F%C3%BAtbol_logo_2020.svg.png",
+        "señales": {
+            "iframe_url": [],
+            "m3u8_url": [
+                "https://cl-a9-p-e-pt11.cdn.mdstrm.com/live-stream-secure/6640d105351fb27ddb0d5586/publish/media_1800.m3u8?aid=65b26c08cc2f4e5507151450&uid=SxEuMV5l2DT9TzQ63EKE3obaLumxCLZZ&sid=t93WVeWebTiiHdxZCvTo0iSC57WbeGW2&pid=qnmwFJALLQ3JnjwkRT3dVj5N89hVTevM&c=65e3526f40973e00088b40ab&ref=https%3A%2F%2Fwww.laliga2d.cl%2F&without_cookies=false&listenerid=&dnt=true&access_token=UEoSKGRv99RZoRbv7NFwwRzzc1ERhck8npfsvn8ztH6wpYgoQVDxj4ETF0068fogWl1H9AbqCJB&es=cl-a9-p-e-pt11.cdn.mdstrm.com&ote=1745017706245&ot=Qlq3YuMS9NIZXjihRmh3ew&proto=https&pz=us
+"
+            ],
+            "yt_id": "",
+            "yt_embed": "",
+            "yt_playlist": "",
+            "twitch_id": ""
+        },
+        "sitio_oficial": "",
+        "país": "cl",
+        "categoría": "news"
     }
 
 
 }
+
+
