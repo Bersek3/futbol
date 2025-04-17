@@ -74,64 +74,6 @@
         "categoría": "news"
     },
 
-/*
-    "fox-sports": {
-        "nombre": "Real Madrid vs Arsenal",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/0/09/Logotipo_de_Teletrece.svg",
-        "señales": {
-            "iframe_url": [
-            ],
-            "m3u8_url": [
-                "https://cdn9.vivozytv.com/foxsports/tracks-v1a1/mono.m3u8?remote=45.232.93.68&token=c6feef0232a5dceb34c003036de01a47b22f5413-ee6bb5d1a1de0e80d864c15d7cd2dc1e-1744840142-1744829342"
-
-            ],
-            "yt_id": "UCsRnhjcUCR78Q3Ud6OXCTNg",
-            "yt_embed": "",
-            "yt_playlist": "",
-            "twitch_id": "t13envivo"
-        },
-        "sitio_oficial": "https://www.t13.cl/en-vivo",
-        "país": "cl",
-        "categoría": "news"
-    },
-    "Espn-1": {
-        "nombre": "Inter vs Bayern Munich",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/0/09/Logotipo_de_Teletrece.svg",
-        "señales": {
-            "iframe_url": [
-            ],
-            "m3u8_url": [
-                "https://print.crackstreamslivehd.com:443/espn/tracks-v1a1/mono.m3u8?ip=45.232.93.68&token=ff169cd698c76ef0b37b1457d15c7a3eec4c5de2-4c-1744853214-1744820814"
-
-            ],
-            "yt_id": "UCsRnhjcUCR78Q3Ud6OXCTNg",
-            "yt_embed": "",
-            "yt_playlist": "",
-            "twitch_id": "t13envivo"
-        },
-        "sitio_oficial": "https://www.t13.cl/en-vivo",
-        "país": "cl",
-        "categoría": "news"
-    },
-
-    "CDF Premium": {
-        "nombre": "Universidad de Chile vs La Serena",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Canal_del_F%C3%BAtbol_logo_2020.svg/512px-Canal_del_F%C3%BAtbol_logo_2020.svg.png",
-        "señales": {
-            "iframe_url": [],
-            "m3u8_url": [
-                "https://florcd.crackstreamslivehd.com/max4/index.m3u8?token=15222150f889bd844aee8b761567dffe67b355e7-3e-1744801788-1744769388&ip=191.114.132.152"
-            ],
-            "yt_id": "",
-            "yt_embed": "",
-            "yt_playlist": "",
-            "twitch_id": ""
-        },
-        "sitio_oficial": "",
-        "país": "cl",
-        "categoría": "news"
-    }, */
-
 
             "La-liga-2d-opc3": {
         "nombre": "La Liga 2D OPCION 3",
