@@ -93,6 +93,25 @@
         "categoría": "news"
     }
 
+                "TNTsport": {
+        "nombre": "TNT SPORTS",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Canal_del_F%C3%BAtbol_logo_2020.svg/512px-Canal_del_F%C3%BAtbol_logo_2020.svg.png",
+        "señales": {
+            "iframe_url": [],
+            "m3u8_url": [
+                "https://deportes.slkdhfdhldeportes.com:8081/MTkwLjIxNy4xOTMuMTY0/77_.m3u8?token=aTuE2bdacTNT3pRnKgJVwQ&expires=1745704056"
+            ],
+            "yt_id": "",
+            "yt_embed": "",
+            "yt_playlist": "",
+            "twitch_id": ""
+        },
+        "sitio_oficial": "",
+        "país": "cl",
+        "categoría": "news"
+    }
+
+
 
 }
 
