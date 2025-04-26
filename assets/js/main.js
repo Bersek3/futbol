@@ -2,7 +2,7 @@
 
 // MARK: Config
 const URL_JSON_CANALES_PRINCIPAL = './canales.json';
-const URL_M3U_CANALES_IPTV = './canales.m3u';
+const URL_M3U_CANALES_IPTV = 'https://iptv-org.github.io/iptv/categories/news.m3u';
 const TWITCH_PARENT = 'alplox.github.io';
 
 const CONTAINER_OVERLAY = document.querySelector('.container-overlay');
