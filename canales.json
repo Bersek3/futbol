@@ -58,20 +58,5 @@
     "sitio_oficial": "https://www.lared.cl/",
     "país": "cl",
     "categoría": "general"
-  },
-  "canal_13": {
-    "nombre": "Canal 13",
-    "logo": "https://www.chiletvapp.com/admin/uploads/chile_67b9239d1eacf.png",
-    "señales": {
-      "iframe_url": [""],
-      "m3u8_url": ["https://jireh-hls-live-video.dpsgo.com/hls-video/10b92cafdf3646cbc1e727f3dc76863621a327fd/c13/playlist.m3u8"],
-      "yt_id": "",
-      "yt_embed": "",
-      "yt_playlist": "",
-      "twitch_id": ""
-    },
-    "sitio_oficial": "https://www.13.cl/",
-    "país": "cl",
-    "categoría": "general"
   }
 }
