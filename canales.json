@@ -46,7 +46,7 @@
   },
   "la_red": {
     "nombre": "La Red",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a7/La_Red_logo_2020.png",
+    "logo": "https://www.chiletvapp.com/admin/uploads/chile_68031332333c4.png",
     "señales": {
       "iframe_url": [""],
       "m3u8_url": [""],
@@ -61,10 +61,10 @@
   },
   "canal_13": {
     "nombre": "Canal 13",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Canal13_logo_2021.png",
+    "logo": "https://www.chiletvapp.com/admin/uploads/chile_67b9239d1eacf.png",
     "señales": {
       "iframe_url": [""],
-      "m3u8_url": [""],
+      "m3u8_url": ["https://jireh-hls-live-video.dpsgo.com/hls-video/10b92cafdf3646cbc1e727f3dc76863621a327fd/c13/playlist.m3u8"],
       "yt_id": "",
       "yt_embed": "",
       "yt_playlist": "",
@@ -73,50 +73,5 @@
     "sitio_oficial": "https://www.13.cl/",
     "país": "cl",
     "categoría": "general"
-  },
-  "tv_pay": {
-    "nombre": "TV de Paga (ejemplo: DirecTV)",
-    "logo": "",
-    "señales": {
-      "iframe_url": [""],
-      "m3u8_url": [""],
-      "yt_id": "",
-      "yt_embed": "",
-      "yt_playlist": "",
-      "twitch_id": ""
-    },
-    "sitio_oficial": "https://www.directv.com.ar/",
-    "país": "cl",
-    "categoría": "paga"
-  },
-  "hbo": {
-    "nombre": "HBO Max",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/1/17/HBO_Max_Logo.svg",
-    "señales": {
-      "iframe_url": [""],
-      "m3u8_url": [""],
-      "yt_id": "",
-      "yt_embed": "",
-      "yt_playlist": "",
-      "twitch_id": ""
-    },
-    "sitio_oficial": "https://www.hbomax.com/",
-    "país": "cl",
-    "categoría": "paga"
-  },
-  "discovery_plus": {
-    "nombre": "Discovery+",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/5/57/Discovery%2B_logo_(2020).svg",
-    "señales": {
-      "iframe_url": [""],
-      "m3u8_url": [""],
-      "yt_id": "",
-      "yt_embed": "",
-      "yt_playlist": "",
-      "twitch_id": ""
-    },
-    "sitio_oficial": "https://www.discoveryplus.com/",
-    "país": "cl",
-    "categoría": "paga"
   }
 }
