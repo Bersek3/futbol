@@ -79,7 +79,7 @@
     "logo": "http://static.wikia.nocookie.net/logopedia/images/b/bd/TNT_Sports_%282023%29_II.svg/revision/latest/scale-to-width-down/250?cb=20230630184634",
     "señales": {
       "iframe_url": [""],
-      "m3u8_url": ["https://cdn17.vivozytv.com/tntsports/index.m3u8?token=45dcc9689b650b37de1792d6859562e6421c5f19-a4d661164966eb03d69e658ef07c10d9-1753218145-1753207345&remote=179.57.171.43"],
+      "m3u8_url": ["https://d8.merichunidya.com:1686/hls/chiletv.m3u8?md5=ZVbvPGSAyO_gBpOUTtvFxw&expires=1753297315"],
       "yt_id": "",
       "yt_embed": "",
       "yt_playlist": "",
