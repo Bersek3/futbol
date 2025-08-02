@@ -109,7 +109,7 @@
     "logo": "https://ott-assets.mdstrm.com/65b26c08cc2f4e5507151450/65c2779eea5336088b4e55e7/assets/Liga2Dsolo.png?auto=format,compress&h=48",
     "señales": {
       "iframe_url": [""],
-      "m3u8_url": ["https://mdstrm.com/video/687d7d9dd2f8ce001213c3e7.m3u8?uid=XScn2FZ1oLrEbRTv9BkdyFOIDueokxxK&sid=lDmtba7EYEWUzt7QcFSgoUvYpzXGNduC&pid=lybutAAql5LJOwjYpxpp9PgKnPWGIetl&pid_dvr=5k4SI7ebx9cIeoR2h2iR9BSFxkHh15uU&an=la-liga-2d-app-web&at=web-app&av=v6.0.183&c=65e3526f40973e00088b40ab&ref=https%3A%2F%2Fwww.laliga2d.cl%2F&res=838x471&without_cookies=false&listenerid=&dnt=true&access_token=ysFOFX6DGWajTS02qt6QTfoa3Jyk8JJ0X11nv46T0q7KZpNeLavBnAB9BnoLEbtjioybPMzz9WA"],
+      "m3u8_url": ["https://edge4.xmediaget.com/hls-live/16832163/1/mediaplaylist.m3u8?s=920585298b1e54899b09feb2b2af7652315a7658fd8ba881bd7363111bf604b2&t=1754162867413&ai=101&av=1025&ui=1339666817"],
       "yt_id": "",
       "yt_embed": "",
       "yt_playlist": "",
