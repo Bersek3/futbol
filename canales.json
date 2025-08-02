@@ -2,7 +2,7 @@
   "24-horas": {
     "nombre": "TVN",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Logotipo_del_Canal_24_Horas.png",
-    "señales": {
+    "senales": {
       "iframe_url": ["https://mdstrm.com/live-stream/57d1a22064f5d85712b20dab?volume=0"],
       "m3u8_url": ["https://mdstrm.com/live-stream-playlist/5346f5f2c1e6f5810b5b9df0.m3u8?ChileTv"],
       "yt_id": "UCTXNz3gjAypWp3EhlIATEJQ",
@@ -17,7 +17,7 @@
   "meganoticias": {
     "nombre": "Mega",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/b/be/Meganoticias2019.png",
-    "señales": {
+    "senales": {
       "iframe_url": ["https://rudo.video/live/mega"],
       "m3u8_url": ["https://pantera1-100gb-cl-movistar.dps.live/mega/mega.smil/playlist.m3u8"],
       "yt_id": "UCkccyEbqhhM3uKOI6Shm-4Q",
@@ -32,7 +32,7 @@
   "chv": {
     "nombre": "CHV (Chilevisión)",
     "logo": "https://www.chiletvapp.com/admin/uploads/chile_686dbfc5eddb1.jpg",
-    "señales": {
+    "senales": {
       "iframe_url": [""],
       "m3u8_url": ["https://mdstrm.com/live-stream-playlist/6491ced935a5833c47dd7f41.m3u8?ChileTv"],
       "yt_id": "",
@@ -47,7 +47,7 @@
   "la_red": {
     "nombre": "La Red",
     "logo": "https://www.chiletvapp.com/admin/uploads/chile_68031332333c4.png",
-    "señales": {
+    "senales": {
       "iframe_url": [""],
       "m3u8_url": [""],
       "yt_id": "",
@@ -62,7 +62,7 @@
     "canal_13": {
     "nombre": "Canal 13",
     "logo": "https://www.chiletvapp.com/admin/uploads/chile_67b9239d1eacf.png",
-    "señales": {
+    "senales": {
       "iframe_url": [""],
       "m3u8_url": ["https://jireh-hls-live-video.dpsgo.com/hls-video/10b92cafdf3646cbc1e727f3dc76863621a327fd/c13/playlist.m3u8"],
       "yt_id": "",
@@ -77,7 +77,7 @@
 "tnt_sport": {
   "nombre": "Tnt Sports Premium 2",
   "logo": "http://static.wikia.nocookie.net/logopedia/images/b/bd/TNT_Sports_%282023%29_II.svg/revision/latest/scale-to-width-down/250?cb=20230630184634",
-  "señales": {
+  "senales": {
     "iframe_url": [""],
     "m3u8_url": ["https://d7.merichunidya.com:1686/hls/chiletv.m3u8?md5=8K0z0VjGY1F7KirAMwTzGA&expires=1754100300"],
     "yt_id": "",
@@ -92,7 +92,7 @@
 "espn": {
     "nombre": "Espn Premium",
     "logo": "https://librefutboltv.su/wp-content/uploads/2022/12/ESPN_Premium.png",
-    "señales": {
+    "senales": {
       "iframe_url": [""],
       "m3u8_url": ["https://a2vlca.fubohd.com/espnpremium/mono.m3u8?token=5f1cddf167038d813d687883e48e91aa477ec580-f7-1753225066-1753207066"],
       "yt_id": "",
@@ -107,7 +107,7 @@
           "liga2d": {
     "nombre": "La Liga 2D OPCION 2",
     "logo": "https://ott-assets.mdstrm.com/65b26c08cc2f4e5507151450/65c2779eea5336088b4e55e7/assets/Liga2Dsolo.png?auto=format,compress&h=48",
-    "señales": {
+    "senales": {
       "iframe_url": [""],
       "m3u8_url": ["https://edge4.xmediaget.com/hls-live/16832163/1/mediaplaylist.m3u8?s=8c7010dfaf9ba166465135f304d627ff6784676f16ae451ed4a802d568f7ddfc&t=1754163379137&ai=101&av=1025&ui=1339666817"],
       "yt_id": "",
